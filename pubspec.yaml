@@ -23,3 +23,5 @@ flutter:
   uses-material-design: true
   assets:
   - assets/imageparkinspot.jpg
+  - assets/Untitled design.jpg
+  - assets/signuppagebg.jpg

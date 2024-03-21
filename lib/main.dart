@@ -43,48 +43,46 @@ class ParkInspotHomePage extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            'assets/imageparkinspot.jpg',
+            'assets/Untitled design.jpg',
             fit: BoxFit.cover,
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    'Welcome to Park-inspot!',
-                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black),
-                  ),
-                  SizedBox(height: 30),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white, // Set the button color to white
-                    ),
-                    child: Text('Login'),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignUpPage()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      primary: Colors.white, // Set the button color to white
-                    ),
-                    child: Text('Sign Up'),
-                  ),
-                ],
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'Welcome to Park Inspot!',
+                  style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
+                ),
               ),
-            ),
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginPage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: const Color.fromARGB(255, 255, 255, 255), // Set the button color to white
+                ),
+                child: Text('Login'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SignUpPage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromARGB(255, 255, 255, 255), // Set the button color to white
+                ),
+                child: Text('Sign Up'),
+              ),
+            ],
           ),
         ],
       ),
@@ -105,7 +103,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
+//signup page
 class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -113,8 +111,81 @@ class SignUpPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Sign Up'),
       ),
-      body: Center(
-        child: Text('This is the sign-up page.'),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/signuppagebg.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Sign Up',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 20),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Username',
+                  ),
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: 'Password',
+                  ),
+                ),
+                SizedBox(height: 10),
+                DropdownButtonFormField<String>(
+                  value: 'Jellyfish Lot',
+                  onChanged: (String? newValue) {},
+                  items: <String>[
+                    'Jellyfish Lot',
+                    'Turtle Cove Lot',
+                    'Curlew Lot',
+                    'Seahorse Lot',
+                  ].map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  decoration: InputDecoration(
+                    labelText: 'Select Parking Lot',
+                  ),
+                ),
+                SizedBox(height: 10),
+                DropdownButtonFormField<String>(
+                  value: 'Motorcycle',
+                  onChanged: (String? newValue) {},
+                  items: <String>['Motorcycle', 'Car', 'Disabled']
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  decoration: InputDecoration(
+                    labelText: 'Select Vehicle Type',
+                  ),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    // Implement sign-up logic
+                  },
+                  child: Text('Sign Up'),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
