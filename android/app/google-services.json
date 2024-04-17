@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "812223297953",
+    "project_id": "parkinspot-afd53",
+    "storage_bucket": "parkinspot-afd53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812223297953:android:83e4f5d81036ad69eeb3e0",
+        "android_client_info": {
+          "package_name": "com.example.flutter_parkinspot"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKCRU2LdE4zE5mhHQbOEvu1pak2iLKNdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
